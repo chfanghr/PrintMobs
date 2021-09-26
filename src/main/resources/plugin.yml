@@ -7,5 +7,5 @@ prefix: print-mobs
 commands:
   pm:
     description: Print mobs in your neraby chunks
-    usage: /pm <radius>?=2
+    usage: /pm (<radius, deafult=2>|all|world)?
     permission: site.urandom.printmobs.command
