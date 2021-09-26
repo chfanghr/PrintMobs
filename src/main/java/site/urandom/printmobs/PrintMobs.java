@@ -19,8 +19,7 @@ public final class PrintMobs extends JavaPlugin {
         Chunk currentChunk = player.getLocation().getChunk();
         Collection<Chunk> nearbyChunks = nearbyChunks(currentChunk, radius);
 
-        Collection<Entity> entities
-                = new ArrayList<Entity>(Arrays.asList(currentChunk.getEntities()));
+        Collection<Entity> entities = new ArrayList<>();
 
         for (Chunk chunk : nearbyChunks) {
             entities.addAll(Arrays.asList(chunk.getEntities()));
@@ -44,9 +43,7 @@ public final class PrintMobs extends JavaPlugin {
 
         player.sendMessage(String.format(ChatColor.YELLOW + "In nearby chunks(radius=%d): %d", radius, totalNumber.get()));
 
-        mobs.forEach((type, count) -> {
-            player.sendMessage(String.format(ChatColor.GRAY + "* %s : %d", type.name(), count));
-        });
+        mobs.forEach((type, count) -> player.sendMessage(String.format(ChatColor.GRAY + "* %s : %d", type.name(), count)));
     }
 
     public static Collection<Chunk> nearbyChunks(Chunk origin, int radius) {
