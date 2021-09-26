@@ -1,0 +1,11 @@
+name: PrintMobs
+version: '${project.version}'
+main: site.urandom.printmobs.PrintMobs
+api-version: 1.17
+prefix: print-mobs
+
+commands:
+  pm:
+    description: Print mobs in your neraby chunks
+    usage: /pm <radius>?=2
+    permission: site.urandom.printmobs.command
